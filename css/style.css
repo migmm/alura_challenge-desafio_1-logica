@@ -125,6 +125,7 @@ main {
     color: var(--dark-blue-300);
     background-color: var(--white);
     border: 1px solid var(--dark-blue-300);
+    transition: background-color 0.5s ease-in-out;
 }
 
 @media (hover: hover) {
@@ -160,7 +161,15 @@ main {
 /**************** Objetos ocultos por default *****************/
 /**************************************************************/
 #texto-out ,
-#btn-copiar,
+
 #munieco  {
     display: none
+}
+
+/**************************************************************/
+/****************** Clases manejadas por JS *******************/
+/**************************************************************/
+
+.boton-copiar-clickeado {
+    background-color: var(--light-blue-100) !important;
 }
