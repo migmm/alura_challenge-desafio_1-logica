@@ -161,7 +161,7 @@ main {
 /**************** Objetos ocultos por default *****************/
 /**************************************************************/
 #texto-out ,
-
+#btn-copiar,
 #munieco  {
     display: none
 }
