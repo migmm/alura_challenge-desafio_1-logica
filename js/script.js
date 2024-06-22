@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Listener del botón Desencriptar que llama a la función validarYConvertir
+    // Listener del boton Desencriptar que llama a la función validarYConvertir
     // Si la conversión y la verificación está bien, desencripta el texto mediante la función correspondiente
     // Y llama a la función mostrarResultado
     btnDesencriptar.addEventListener('click', function() {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Función que se encarga de mostrar el resultado (encriptado o desencriptado)
+    // Función que se encarga de mostrar el resultado encriptado o desencriptado
     // Y oculta el texto de error, y muestra el textarea con el resultado
     // Y el botón para copiar el texto al portapapeles 
     function mostrarResultado(texto) {
@@ -89,8 +89,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Cambia el color del botón Copiar cuando se hace click
-    // Se reinicia cuando se modifica el contenido de texto-in
+    // Copia el texto al portapapeles y reinicia el estilo cuando se modifica el contenido de texto-in
     btnCopiar.addEventListener('click', function() {
-        btnCopiar.classList.add('boton-copiar-clickeado');
+        navigator.clipboard.writeText(textoOut.value).then(() => {
+            btnCopiar.classList.add('boton-copiar-clickeado');
+            alert("Texto copiado al portapapeles");
+        });
     });
 });
