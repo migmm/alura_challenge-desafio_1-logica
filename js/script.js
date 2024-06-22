@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const textoIn = document.getElementById('texto-in');
     const textoOut = document.getElementById('texto-out');
     const btnEncriptar = document.getElementById('btn-encriptar');
+    const btnCopiar = document.getElementById('btn-copiar');
     const mensajeError = document.querySelector('.mensaje-error');
 
     // Función para encriptar dados los requerimientos.
@@ -48,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         textoOut.value = textoEncriptado;
         ajustarAltura(textoOut);
         textoOut.style.display = 'block';
+        btnCopiar.style.display = 'block';
         mensajeError.style.display = 'none';
     }
 
@@ -60,5 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Redimensiona el textarea texto-in a la cantidad de caracteres que contiene
     textoIn.addEventListener('input', function() {
         ajustarAltura(this);
+        btnCopiar.classList.remove('boton-copiar-clickeado');
+    });
+
+    // Cambia el color del botón Copiar cuando se hace click
+    // Se reinicia cuando se modifica el contenido de texto-in
+    btnCopiar.addEventListener('click', function() {
+        btnCopiar.classList.add('boton-copiar-clickeado');
     });
 });
