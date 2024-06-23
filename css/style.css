@@ -158,7 +158,7 @@ main {
     resize: none;
     overflow: hidden;
     box-sizing: border-box;
-    min-height: 40px;
+    min-height: 80%;
     margin-bottom: 29px;
 }
 
