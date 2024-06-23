@@ -168,6 +168,7 @@ main {
     line-height: 28.8px;
     margin-bottom: 16px;
 }
+
 #mensaje-ingresar-texto {
     font-size: 16px;
     text-align: center;
@@ -180,13 +181,44 @@ main {
 #texto-out ,
 #btn-copiar,
 #munieco  {
-    display: none
+    display: none;
 }
 
 /**************************************************************/
 /****************** Clases manejadas por JS *******************/
 /**************************************************************/
-
 .boton-copiar-clickeado {
     background-color: var(--light-blue-100) !important;
 }
+
+/**************************************************************/
+/******************** Responsive + 768px **********************/
+/**************************************************************/
+@media (min-width: 768px) {
+
+    #logo {
+        width: 31.9px;
+        height: 46.37px;
+        margin-top: 73.42px;
+        margin-left: 40px;
+    }
+
+    main {
+        padding: 40px;
+    }
+
+    #texto-in {
+        margin-top: 103px;
+        min-height: 595px;
+    }
+
+    .contenedor-salida {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .contenedor-botones {
+        flex-direction: row;
+    }
+}
+
