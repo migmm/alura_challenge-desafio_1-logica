@@ -7,6 +7,7 @@
     --dark-blue-300: #0a3871;
     --dark-blue-400: #092e5c;
     --gray-400: #495057;
+    --gray-200: #D8DFE8;
     --shadow: rgba(0, 0, 0, 0.08);
     font-family: Inter, sans-serif;
     font-weight: 400;
@@ -251,7 +252,7 @@ main {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        gap: 40px;
+        gap: 80px;
     }
 
     .contenedor-entrada {
@@ -273,5 +274,9 @@ main {
 
     .contenedor-botones {
         flex-direction: row;
+    }
+
+    #btn-desencriptar {
+        background-color: var(--gray-200);
     }
 }
