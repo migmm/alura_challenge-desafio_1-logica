@@ -52,7 +52,7 @@ main {
 #texto-in {
     margin-top: 40px;
     width: 100%;
-    min-height: 297px;
+    min-height: 320px;
     outline: none;
     border: none;
     background-color: var(--light-blue-100);
@@ -98,7 +98,7 @@ main {
     width: 100%;
     gap: 24px;
     margin-top: 15px;
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 
 /**************************************************************/
