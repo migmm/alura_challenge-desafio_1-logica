@@ -18,6 +18,13 @@ html {
 body {
     height: 100%;
     background-color: var(--light-blue-100);
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 1440px;
 }
 
 /**************************************************************/
