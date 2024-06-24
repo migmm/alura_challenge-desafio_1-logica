@@ -259,6 +259,10 @@ main {
         width: 100%;
     }
 
+    #signo-exclamacion {
+        opacity: 0.9;
+    }
+
     .contenedor-salida {
         width: 400px;
         max-height: 944px;
