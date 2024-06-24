@@ -12,9 +12,6 @@
     font-weight: 400;
 }
 
-html {
-}
-
 body {
     height: 100%;
     background-color: var(--light-blue-100);
