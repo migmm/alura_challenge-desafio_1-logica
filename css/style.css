@@ -285,8 +285,8 @@ main {
     }
 
     .contenedor-salida {
-        min-width: 400px;
-        width: 400px;
+        min-width: 336px;
+        width: 336px;
         max-height: 944px;
         display: flex;
         flex-direction: column;
