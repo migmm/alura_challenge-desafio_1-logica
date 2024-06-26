@@ -95,7 +95,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Texto copiado al portapapeles");
         });
     });
-
-    
-    window.addEventListener('resize', ajustarAltura);
 });
