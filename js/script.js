@@ -79,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para ajustar la altura del textarea según su contenido
     function ajustarAltura(elemento) {
         elemento.style.height = 'auto';
+        elemento.style.height = elemento.scrollHeight + 'px';
     }
 
     // Redimensiona el textarea texto-in a la cantidad de caracteres que contiene
