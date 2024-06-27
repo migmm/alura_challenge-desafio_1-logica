@@ -6,7 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnCopiar = document.getElementById('btn-copiar');
     const mensajeError = document.querySelector('.mensaje-error');
 
-    // Función para encriptar dados los requerimientos.
+    /**
+    * Encripta un texto dado de acuerdo a un mapeo específico.
+    * @param {string} texto - El texto a encriptar.
+    * @return {string} - El texto encriptado.
+    */
     function encriptar(texto) {
         const mapeo = {
             'a': 'ai',
@@ -18,7 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return texto.replace(/[aeiou]/g, letra => mapeo[letra]);
     }
 
-    // Función para desencriptar dados los requerimientos.
+    /**
+    * Desencripta un texto dado de acuerdo a un mapeo específico.
+    * @param {string} texto - El texto a desencriptar.
+    * @return {string} - El texto desencriptado.
+    */
     function desencriptar(texto) {
         const mapeo = {
             'ai': 'a',
@@ -30,9 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return texto.replace(/ai|enter|imes|ober|ufat/g, palabra => mapeo[palabra]);
     }
 
-    // Función para validar y convertir el texto a minúsculas
-    // Convierte el texto en lower case y verifica si hay algo mas que letras
-    // Si hay arroja un alert
+    /**
+    * Valida el texto y lo convierte a minúsculas.
+    * @param {string} texto - El texto a validar y convertir.
+    * @return {string|boolean} - El texto en minúsculas si es válido, false si no lo es.
+    */
     function validarYConvertir(texto) {
         const textoLowerCase = texto.toLowerCase();
         if (/^[a-z\s]*$/.test(textoLowerCase)) {
@@ -43,9 +53,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Listener del boton Encriptar que llama a la función validarYConvertir
-    // Si la conversión y la verificación está bien, encripta el texto mediante la función correspondiente
-    // Y llama a la función mostrarResultado
+    /**
+    * Listener del botón Encriptar que valida y encripta el texto.
+    */
     btnEncriptar.addEventListener('click', function() {
         const textoValidado = validarYConvertir(textoIn.value);
         if (textoValidado) {
@@ -54,9 +64,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Listener del boton Desencriptar que llama a la función validarYConvertir
-    // Si la conversión y la verificación está bien, desencripta el texto mediante la función correspondiente
-    // Y llama a la función mostrarResultado
+    /**
+    * Listener del botón Desencriptar que valida y desencripta el texto.
+    */
     btnDesencriptar.addEventListener('click', function() {
         const textoValidado = validarYConvertir(textoIn.value);
         if (textoValidado) {
@@ -65,9 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Función que se encarga de mostrar el resultado encriptado o desencriptado
-    // Y oculta el texto de error, y muestra el textarea con el resultado
-    // Y el botón para copiar el texto al portapapeles 
+    /**
+    * Muestra el resultado encriptado o desencriptado y ajusta la interfaz.
+    * @param {string} texto - El texto a mostrar.
+    */
     function mostrarResultado(texto) {
         textoOut.value = texto;
         ajustarAltura(textoOut);
@@ -76,20 +87,26 @@ document.addEventListener('DOMContentLoaded', function() {
         mensajeError.style.display = 'none';
     }
 
-    // Función para ajustar la altura del textarea según su contenido
+    /**
+    * Ajusta la altura del textarea según su contenido.
+    * @param {HTMLElement} elemento - El textarea a ajustar.
+    */
     function ajustarAltura(elemento) {
         elemento.style.height = 'auto';
         elemento.style.height = elemento.scrollHeight + 'px';
     }
 
-    // Redimensiona el textarea texto-in a la cantidad de caracteres que contiene
+    /**
+    * Listener para ajustar la altura del textarea texto-in al cambiar su contenido.
+    */
     textoIn.addEventListener('input', function() {
         ajustarAltura(this);
         btnCopiar.classList.remove('boton-copiar-clickeado');
     });
 
-    // Cambia el color del botón Copiar cuando se hace click
-    // Copia el texto al portapapeles y reinicia el estilo cuando se modifica el contenido de texto-in
+    /**
+    * Listener para copiar el texto al portapapeles y cambiar el estilo del botón Copiar.
+    */
     btnCopiar.addEventListener('click', function() {
         navigator.clipboard.writeText(textoOut.value).then(() => {
             btnCopiar.classList.add('boton-copiar-clickeado');
@@ -97,9 +114,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-     // Listener para ajustar el tamaño de textoOut sengun el breakpoint que tenga
+    /**
+    * Listener para ajustar la altura del textarea texto-out al cambiar el tamaño de la ventana.
+    */
     window.addEventListener('resize', function() {
         ajustarAltura(textoOut);
     });
-
 });
