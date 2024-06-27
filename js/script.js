@@ -96,4 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
             alert("Texto copiado al portapapeles");
         });
     });
+
+     // Listener para ajustar el tamaño de textoOut sengun el breakpoint que tenga
+    window.addEventListener('resize', function() {
+        ajustarAltura(textoOut);
+    });
+
 });
